@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: front-hello-world
-          image: kurbenetes-hello-world:1.0.0
+          image: kubernetes-hello-world:1.0.0
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
