@@ -4,17 +4,15 @@ metadata:
   name: hello-world-app
   namespace: argocd
 spec:
-  destination:
-    namespace: default
-    server: https://kubernetes.default.svc
-  source:
-    path: hello-world-kubernetes/k8s
-    repoURL: git@github.com:CesarJimenezLaguna/taller-kubernetes-practica.git
-    targetRevision: HEAD
-  sources: []
   project: default
+  source:
+    repoURL: https://github.com/CesarJimenezLaguna/taller-kubernetes-practica.git
+    targetRevision: HEAD
+    path: hello-world-kubernetes/k8s
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
   syncPolicy:
     automated:
-      prune: false
-      selfHeal: false
-      enabled: true
+      prune: true
+      selfHeal: true
